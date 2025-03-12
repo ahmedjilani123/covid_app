@@ -10,7 +10,7 @@
     <f:Card height="150px" class="headerCardAdd">
     <f:content>
     <HBox justifyContent="SpaceAround" width="100%" alignContent="Center" alignItems="Center">
-    <Title text="Practice" level="H1" titleStyle="H1" class="titleAdd"></Title>
+    <Title text="Covid 19" level="H1" titleStyle="H1" class="titleAdd"></Title>
     <core:Icon src="sap-icon://stethoscope" size="3.5rem" class="titleAdd"></core:Icon>
     </HBox>
     </f:content>
