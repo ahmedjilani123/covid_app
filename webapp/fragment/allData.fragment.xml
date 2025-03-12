@@ -1,0 +1,36 @@
+<core:FragmentDefinition xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data" xmlns:controls="sap.viz.ui5.controls" xmlns:core="sap.ui.core" xmlns="sap.m">
+<Dialog  contentWidth="860px">
+<customHeader>
+<Bar >
+<contentRight>
+<Button icon="sap-icon://decline" press="CloseDialogPress"></Button>
+</contentRight>
+</Bar>
+</customHeader>
+<content>
+<controls:VizFrame vizType="column" width="850px" vizProperties="{title:{text:'state wise case'}}" >
+<controls:dataset>
+<data:FlattenedDataset data="{covidData>/data/regional}">
+<data:measures>
+
+<data:MeasureDefinition name="Deaths" value="{covidData>deaths}"></data:MeasureDefinition>
+<data:MeasureDefinition name="TotalConfirmed" value="{covidData>totalConfirmed}"></data:MeasureDefinition>
+<data:MeasureDefinition name="Discharged" value="{covidData>discharged}"></data:MeasureDefinition>
+</data:measures>
+<data:dimensions>
+<data:DimensionDefinition name="State" value="{covidData>loc}"></data:DimensionDefinition>
+</data:dimensions>
+</data:FlattenedDataset>
+</controls:dataset>
+<controls:feeds>
+<feeds:FeedItem uid="valueAxis" type="Measure" values="Deaths"></feeds:FeedItem>
+<feeds:FeedItem uid="valueAxis" type="Measure" values="TotalConfirmed"></feeds:FeedItem>
+<feeds:FeedItem uid="valueAxis" type="Measure" values="Discharged"></feeds:FeedItem>
+
+
+<feeds:FeedItem uid="categoryAxis" type="Dimension" values="State" ></feeds:FeedItem>
+</controls:feeds>
+</controls:VizFrame>
+</content>
+</Dialog>
+</core:FragmentDefinition>

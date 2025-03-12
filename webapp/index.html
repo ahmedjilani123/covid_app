@@ -22,6 +22,21 @@
         data-sap-ui-async="true"
         data-sap-ui-frameOptions="trusted"
     ></script>
+    <script>
+
+        sap.ui.getCore().attachInit(function () {
+             sap.ui.core.BusyIndicator.show()
+            
+        })
+    
+        document.addEventListener('contextmenu',
+         event => event.preventDefault());
+         document.addEventListener('keydown', function(event) {
+   if (event.key === 'F12') {
+     event.preventDefault();
+   }
+ });
+            </script>
 </head>
 <body class="sapUiBody sapUiSizeCompact" id="content">
     <div

@@ -1,6 +1,250 @@
-<mvc:View controllerName="ca.covidapp.controller.View1"
+<mvc:View xmlns:cssgrid="sap.ui.layout.cssgrid" xmlns:feeds="sap.viz.ui5.controls.common.feeds" xmlns:data="sap.viz.ui5.data" xmlns:controls="sap.viz.ui5.controls" xmlns:core="sap.ui.core" xmlns:f="sap.f" xmlns:layout="sap.ui.layout" controllerName="ca.covidapp.controller.View1"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
+    <headerContent>
+    <Button text="View All States Data" press="getAllData" type="Critical"></Button>
+    <Avatar displaySize="XS" active="true" showBorder="true" press="AvatarPress" backgroundColor="Accent4" initials="AJ"></Avatar>
+    </headerContent>
+    <layout:Grid defaultSpan="XL12 L12 M12 S12" class="sapUiSmallMarginTop">
+    <f:Card height="150px" class="headerCardAdd">
+    <f:content>
+    <HBox justifyContent="SpaceAround" width="100%" alignContent="Center" alignItems="Center">
+    <Title text="Practice" level="H1" titleStyle="H1" class="titleAdd"></Title>
+    <core:Icon src="sap-icon://stethoscope" size="3.5rem" class="titleAdd"></core:Icon>
+    </HBox>
+    </f:content>
+    </f:Card>
+    </layout:Grid>
+    <layout:Grid  defaultSpan="XL6 L6 M6 S12" >
+            <!-- <HBox width="100%" wrap="Wrap" class="headerCardAdd12" >
+               -->
+            <f:Card width="100%" class="cardnew">
+            <f:content>
+            <controls:VizFrame id="vizframeId" class="cardnew" vizType="donut" height="375px" >
+            <controls:dataset >
+            <data:FlattenedDataset data="{covidData>/pie}" >
+            <data:dimensions>
+            <data:DimensionDefinition  name="Category" value="{covidData>loc}"></data:DimensionDefinition>
+            </data:dimensions>
+            <data:measures>
+            <data:MeasureDefinition name="Cases" value="{covidData>Cases}"></data:MeasureDefinition>
+            </data:measures>
+            </data:FlattenedDataset>
+            </controls:dataset>
+            <controls:feeds>
+            <feeds:FeedItem  uid="color" type="Dimension" values="Category"></feeds:FeedItem>
+            <feeds:FeedItem uid="size" type="Measure" values="Cases"></feeds:FeedItem>
+            </controls:feeds>
+            </controls:VizFrame>
+           </f:content>
+            </f:Card>
+            
+       
+               
+        
+              <f:GridList >
+              <f:GridListItem class="card1">
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://electrocardiogram"
+                                                        size="2.5rem" color="#e5f61b"
+                                                    />
+
+                                                    <Title
+                                                        text="{covidData>/data/summary/confirmedCasesIndian}" class="cardtitle"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="Confirmed Cases Indian" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+             <f:GridListItem class="card2" >
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://collections-management"
+                                                        size="2.5rem" color="#943c22"
+                                                    />
+
+                                                    <Title class="cardtitle"
+                                                        text="{covidData>/data/summary/confirmedCasesIndian}"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="Confirmed Cases Foreign" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+             <f:GridListItem class="card3">
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://quality-issue"
+                                                        size="2.5rem" color="#12dff3"
+                                                    />
+
+                                                    <Title
+                                                        text="{covidData>/data/summary/deaths}" class="cardtitle"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="World Wise Deaths" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+           <f:GridListItem class="cardnew">
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://globe"
+                                                        size="2.5rem" color="#e5f61b"
+                                                    />
+
+                                                    <Title
+                                                        text="{covidData>/data/summary/discharged}" class="cardtitle"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="World Wise Discharged" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+             <f:GridListItem class="card1" >
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://collections-management"
+                                                        size="2.5rem" color="#943c22"
+                                                    />
+
+                                                    <Title class="cardtitle"
+                                                        text="{covidData>/data/summary/total}"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="World Wise Total Cases" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+             <f:GridListItem class="card2">
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://cancel-share"
+                                                        size="2.5rem" color="#a106f4"
+                                                    />
+
+                                                    <Title
+                                                        text="{covidData>/data/unofficial-summary/0/total}" class="cardtitle"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="Total Case India" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+           <f:GridListItem class="card3">
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://physical-activity"
+                                                        size="2.5rem" color="#ffc07c"
+                                                    />
+
+                                                    <Title
+                                                        text="{covidData>/data/unofficial-summary/0/active}" class="cardtitle"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="Active Case India" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+             <f:GridListItem class="card2" >
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://cancel-share"
+                                                        size="2.5rem" color="#943c22"
+                                                    />
+
+                                                    <Title class="cardtitle"
+                                                        text="{covidData>/data/unofficial-summary/0/deaths}"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="Deaths India" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+             <f:GridListItem class="card1">
+               <VBox
+                                                    class="sapUiSmallMargin"
+                                                    justifyContent="Center"
+                                                    alignContent="Center"
+                                                    alignItems="Center"
+                                                >
+                                                    <core:Icon
+                                                       src="sap-icon://fallback"
+                                                        size="2.5rem" color="#f2c1ea"
+                                                    />
+
+                                                    <Title
+                                                        text="{covidData>/data/unofficial-summary/0/recovered}" class="cardtitle"
+                                                        wrapping="true" level="H1" titleStyle="H4"
+                                                    />
+                                                    <Label
+                                                        text="Recovered India" class="cardtitle"
+                                                        wrapping="true"
+                                                    />
+                                                </VBox>
+              </f:GridListItem>
+           
+              </f:GridList>
+                
+        </layout:Grid>
     </Page>
 </mvc:View>

@@ -1,1 +1,40 @@
-/* Enter your custom styles here */
+.headerCardAdd{
+    background-image: linear-gradient(45deg,#ff930f,#fff95b) !important;
+    border: #fff95b solid 1px !important;
+}
+.titleAdd{
+  background: -webkit-linear-gradient(45deg,red, blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.cardtitle{
+    background: -webkit-linear-gradient(45deg,white, skyblue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;  
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.headerCardAdd1{
+    background-color: red;
+}
+.sapMIBar-CTX .sapMTitle{
+color: white !important;
+}
+.card1{
+    background-image: linear-gradient(45deg,#ffcf67,#d3321d) !important;
+}
+.sapMPage{
+    background-image:linear-gradient(45deg,#caefd7,#f5bfd7,#abc9e9) !important;
+}
+.sapMPageHeader{
+    background-image:linear-gradient(45deg,#595cff,#c6f8ff) !important;
+    color: white !important;
+}
+.card2{
+    background-image: linear-gradient(45deg,#f756aa,#f76cc6) !important;
+}
+.card3{
+    background-image: linear-gradient(45deg,#a106f4,#e707fa) !important;
+}
+.cardnew{
+    background-image: linear-gradient(45deg,#010101,#e95d3c) !important;
+}
